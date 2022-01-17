@@ -10,7 +10,11 @@ class Point:
         b = self.A[1] - a*self.A[0]
         return (int(a), int(b))
 
+# input
 x1, y1, x2, y2 = int(input()), int(input()), int(input()), int(input())
+
+
 line = Point((x1, y1), (x2, y2))
 e = line.equation()
+
 print(e)
