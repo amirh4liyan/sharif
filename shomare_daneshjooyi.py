@@ -23,8 +23,8 @@ class Contestant:
     def withdraw(self):
         Id = self.nationalId
         name = self.diction[Id]["name"]
-        msg = " Participant %s with the NationalId:%d, withdrew from the competition"
-        print(msg %(name, Id))
+        msg = " -{} with the NationalId : {}, withdrew from the competition"
+        print(msg.format(name, Id))
         del self.diction[Id]
         
 class Classification:
@@ -47,7 +47,7 @@ class Classification:
         for i in range(len(self.listx)):
             name = self.listx[i]["name"]
             score = self.listx[i]["score"]
-            print(f"{counter}-> {name}\t{score}")
+            print("{}-> {}\t{}".format(counter, name, score))
             counter += 1
 
     def gentlemans_table(self):
@@ -56,7 +56,7 @@ class Classification:
             if self.listx[i]["sex"] == "male":
                 name = self.listx[i]["name"]
                 score = self.listx[i]["score"]
-                print(f"{counter}-> {name}\t{score}")
+                print("{}-> {}\t{}".format(counter, name, score))
                 counter += 1
 
     def ladies_table(self):
@@ -65,6 +65,5 @@ class Classification:
             if self.listx[i]["sex"] == "female":
                 name = self.listx[i]["name"]
                 score = self.listx[i]["score"]
-                print(f"{counter}-> {name}\t{score}")
+                print("{}-> {}\t{}".format(counter, name, score))
                 counter += 1
-
