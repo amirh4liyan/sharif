@@ -1,3 +1,5 @@
+import re
+
 class check:
     def __init__(self, **kwargs):
         self.kwargs = kwargs 
@@ -20,8 +22,16 @@ class check:
                 continue
             if valid:
                 validUsers.append(username)
+       
+        counter = len(validUsers)
+        print("[", end="")
+        for user in validUsers:
+            print("'{}'".format(user), end="")
+            if counter > 1:
+                print(",", end="")
+            counter -= 1
+        print("]")
 
-        print(validUsers)
-
+print(diction)
 ch = check(username="password", sadegh="He3@lsa", python="kLS45@l$")
 ch.check_registration_rules()
