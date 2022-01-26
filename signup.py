@@ -1,7 +1,5 @@
-import re
-
 class check:
-    def __init__(self, **kwargs):
+    def __init__(self, kwargs):
         self.kwargs = kwargs 
         
     def check_registration_rules(self):
@@ -32,6 +30,15 @@ class check:
             counter -= 1
         print("]")
 
-print(diction)
-ch = check(username="password", sadegh="He3@lsa", python="kLS45@l$")
+txt = input()
+strip = ["(", ")", "=", "'", ","]
+for case in strip:
+    txt = txt.replace(case, " ")
+txt = txt.split()
+
+diction = {}
+for i in range(0, len(txt), 2):
+    diction[txt[i]] = txt[i+1]
+    
+ch = check(diction)
 ch.check_registration_rules()

@@ -25,4 +25,11 @@ while not number == 1:
     else:
         counter += 1
 
-print(answer)
+counter = len(answer)
+print("{", end="")
+for key in answer:
+    print("'{}':'{}'".format(key, answer[key]), end="")
+    if counter > 1:
+        print(",", end="")
+    counter -= 1
+print("}")

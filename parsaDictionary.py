@@ -3,22 +3,15 @@ while True:
    line = input()
    if line == "<end>":
        break
-   lines.add(line)
+   else:
+       lines.add(line)
 lines.discard('')
 
-
-def clearLine(strLine):
-    spaces = ",.<>\"\'"
-    for char in spaces:
-        strLine = strLine.replace(char, ' ')
-    return strLine
-
 def addKeys(keyWord):
-    strips = ";: "
+    strips = '.: "'
     keyWord = keyWord.strip(strips)
     keyWord = keyWord.lower()
-    if keyWord not in wordsDict:
-        wordsDict.add(keyWord)
+    wordsDict.add(keyWord)
 
 def swap(i):
     keyWords[i], keyWords[i-1] = keyWords[i-1], keyWords[i]
@@ -54,11 +47,11 @@ def compareAlpha(x, y):
 
 wordsDict = set()
 for line in lines:
-    line = clearLine(line)
     line = line.split()
     for word in line:
         addKeys(word)
 
 keyWords = list(wordsDict)
 sortByAlpha()
-print(keyWords)
+for word in keyWords:
+    print(word)
